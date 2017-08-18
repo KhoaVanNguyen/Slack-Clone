@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D20269311F46608400942AF5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20269301F46608400942AF5 /* GradientView.swift */; };
+		D20269341F46697400942AF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20269331F46697400942AF5 /* Constants.swift */; };
+		D20269361F466E8400942AF5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20269351F466E8400942AF5 /* LoginVC.swift */; };
 		D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */; };
 		D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */; };
 		D2ED8AAC1F45E99900E9760A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED8AAB1F45E99900E9760A /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		D20269301F46608400942AF5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D20269331F46697400942AF5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D20269351F466E8400942AF5 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		D2ED8AA81F45E99900E9760A /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +55,20 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		D20269321F46695C00942AF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D20269331F46697400942AF5 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		D2D0FD1D1F45EB71005FA25E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */,
 				D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */,
+				D20269351F466E8400942AF5 /* LoginVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -79,6 +92,7 @@
 		D2ED8AAA1F45E99900E9760A /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				D20269321F46695C00942AF5 /* Utils */,
 				D202692F1F46606D00942AF5 /* Views */,
 				D2D0FD1D1F45EB71005FA25E /* Controllers */,
 				D2ED8ABD1F45E9A000E9760A /* SupportingFiles */,
@@ -177,9 +191,11 @@
 			files = (
 				D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */,
 				D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */,
+				D20269361F466E8400942AF5 /* LoginVC.swift in Sources */,
 				D20269311F46608400942AF5 /* GradientView.swift in Sources */,
 				D2ED8AAC1F45E99900E9760A /* AppDelegate.swift in Sources */,
 				D2ED8AC11F45E9B300E9760A /* SWRevealViewController.m in Sources */,
+				D20269341F46697400942AF5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
