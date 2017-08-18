@@ -8,5 +8,7 @@
 
 import Foundation
 
-
+ // segues
 let TO_LOGIN = "to_login"
+let TO_CREATE_ACCOUNT = "toCreateAccount"
+let UNWIND = "unwind"

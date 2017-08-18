@@ -19,5 +19,51 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smack/Constants.swift"
+            timestampString = "524739447.562005"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_6346E2D954B87A5722E9EAED2E5C38A3_func0"
+                  moduleName = "Smack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khoa/Documents/DATA/Learning%20IOS/Smack/Smack/Constants.swift"
+                  timestampString = "524739448.270486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smack.TO_LOGIN.unsafeMutableAddressor : Swift.String"
+                  moduleName = "Smack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khoa/Documents/DATA/Learning%20IOS/Smack/Smack/Constants.swift"
+                  timestampString = "524739448.275545"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
