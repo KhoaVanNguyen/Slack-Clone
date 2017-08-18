@@ -12,3 +12,30 @@ import Foundation
 let TO_LOGIN = "to_login"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwind"
+
+
+// user authentication
+
+let IS_LOGGED_IN = "is_logged_in"
+let LOGGIN_EMAIL = "login_email"
+let TOKEN = "token"
+let headers = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+// URL
+
+let BASE_URL = "http://localhost:3005/v1"
+let REGISTER_URL = "\(BASE_URL)/account/register"
+let LOGIN_URL = "\(BASE_URL)/account/login"
+
+
+
+
+
+
+
+
+
+
+
