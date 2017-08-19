@@ -12,7 +12,7 @@ import Foundation
 let TO_LOGIN = "to_login"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwind"
-
+let TO_CHOOSE_AVATAR = "toChooseAvatar"
 
 // user authentication
 
@@ -31,6 +31,9 @@ let LOGIN_URL = "\(BASE_URL)/account/login"
 let ADDUSER_URL = "\(BASE_URL)/user/add"
 
 
+// Notification
+
+let NOTI_USERDATA_CHANGE = Notification.Name("notiUserDataChange")
 
 
 

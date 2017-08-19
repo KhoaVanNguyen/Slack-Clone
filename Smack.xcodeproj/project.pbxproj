@@ -13,6 +13,7 @@
 		D20269361F466E8400942AF5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20269351F466E8400942AF5 /* LoginVC.swift */; };
 		D25A2AC11F47136D00FC15C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A2AC01F47136D00FC15C4 /* AuthService.swift */; };
 		D25A2AC31F47381E00FC15C4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A2AC21F47381E00FC15C4 /* UserDataService.swift */; };
+		D2BC3A461F47C4EC0011772F /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */; };
 		D2CE88731F46E24B000925A1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */; };
 		D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */; };
 		D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */; };
@@ -31,6 +32,7 @@
 		D20269351F466E8400942AF5 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D25A2AC01F47136D00FC15C4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D25A2AC21F47381E00FC15C4 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */,
 				D20269351F466E8400942AF5 /* LoginVC.swift */,
 				D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */,
+				D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				D25A2AC11F47136D00FC15C4 /* AuthService.swift in Sources */,
 				D20269361F466E8400942AF5 /* LoginVC.swift in Sources */,
 				D20269311F46608400942AF5 /* GradientView.swift in Sources */,
+				D2BC3A461F47C4EC0011772F /* ChooseAvatarVC.swift in Sources */,
 				D25A2AC31F47381E00FC15C4 /* UserDataService.swift in Sources */,
 				D2ED8AAC1F45E99900E9760A /* AppDelegate.swift in Sources */,
 				D2ED8AC11F45E9B300E9760A /* SWRevealViewController.m in Sources */,

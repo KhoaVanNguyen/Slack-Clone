@@ -15,7 +15,10 @@ class AuthService{
     let defaults = UserDefaults.standard
     var isLoggedIn: Bool{
         get{
-            return defaults.value(forKey: IS_LOGGED_IN) as! Bool
+            guard let logged = defaults.value(forKey: IS_LOGGED_IN)  else {
+                return false
+            }
+            return logged as! Bool
         }
         set{
             defaults.set(newValue, forKey: IS_LOGGED_IN)
@@ -84,20 +87,15 @@ class AuthService{
                 //                    }
                 //                }
                 
-                
-                
-                let jsonObj =  JSON([["name":"Jack", "age": 25]])
-                
-                //                print(jsonObj)
-                print(jsonObj["age"].stringValue)
                 guard let data = response.data else { return }
                 debugPrint(data)
                 do {
                     let json = try JSON(data: data)
                     
+                    self.isLoggedIn = true
                     self.loggedInEmail = json["email"].stringValue
                     self.token = json["token"].stringValue
-                    
+                    print(self.token)
                     
                 }catch{
                     print("Error when using SwiftyJSON")
