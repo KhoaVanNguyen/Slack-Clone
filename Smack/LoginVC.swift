@@ -34,7 +34,31 @@ class LoginVC: UIViewController {
         }
         
         AuthService.instance.login(email: email, password: password) { (result) in
-            print(result)
+            
+            if result {
+                User.instance.findUserByEmail(email: email, completion: { (isComplete, data) in
+                    if isComplete {
+                        UserDataService.instance.setUserData(id: (data?[0])!, email: (data?[1])!, name: (data?[2])!, avatarName: (data?[3])!, avatarColor: (data?[4])!)
+                        
+                        NotificationCenter.default.post(name: NOTI_USERDATA_CHANGE, object: nil)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            } else {
+                self.showAlert(title: "ERROR", message: "Can't login, please check your email or password!")
+            }
         }
     }
+    func showAlert(title: String, message : String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+
 }

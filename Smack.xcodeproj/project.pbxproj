@@ -14,6 +14,9 @@
 		D25A2AC11F47136D00FC15C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A2AC01F47136D00FC15C4 /* AuthService.swift */; };
 		D25A2AC31F47381E00FC15C4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25A2AC21F47381E00FC15C4 /* UserDataService.swift */; };
 		D2BC3A461F47C4EC0011772F /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */; };
+		D2BC3A491F4817E20011772F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A471F4817E20011772F /* ProfileVC.swift */; };
+		D2BC3A4A1F4817E20011772F /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BC3A481F4817E20011772F /* ProfileVC.xib */; };
+		D2BC3A4D1F481F840011772F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A4C1F481F840011772F /* User.swift */; };
 		D2CE88731F46E24B000925A1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */; };
 		D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */; };
 		D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */; };
@@ -33,6 +36,9 @@
 		D25A2AC01F47136D00FC15C4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D25A2AC21F47381E00FC15C4 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
+		D2BC3A471F4817E20011772F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		D2BC3A481F4817E20011772F /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		D2BC3A4C1F481F840011772F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
@@ -98,8 +104,17 @@
 			children = (
 				D25A2AC01F47136D00FC15C4 /* AuthService.swift */,
 				D25A2AC21F47381E00FC15C4 /* UserDataService.swift */,
+				D2BC3A4C1F481F840011772F /* User.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		D2BC3A4B1F4817E50011772F /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC3A481F4817E20011772F /* ProfileVC.xib */,
+			);
+			name = XIBs;
 			sourceTree = "<group>";
 		};
 		D2D0FD1D1F45EB71005FA25E /* Controllers */ = {
@@ -107,6 +122,7 @@
 			children = (
 				D2D0FD1E1F45EB83005FA25E /* ChatVC.swift */,
 				D2D0FD201F45EB8D005FA25E /* ChannelVC.swift */,
+				D2BC3A471F4817E20011772F /* ProfileVC.swift */,
 				D20269351F466E8400942AF5 /* LoginVC.swift */,
 				D2CE88721F46E24B000925A1 /* CreateAccountVC.swift */,
 				D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */,
@@ -135,6 +151,7 @@
 		D2ED8AAA1F45E99900E9760A /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				D2BC3A4B1F4817E50011772F /* XIBs */,
 				D25A2ABF1F47135F00FC15C4 /* Services */,
 				D20269321F46695C00942AF5 /* Utils */,
 				D202692F1F46606D00942AF5 /* Views */,
@@ -223,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BC3A4A1F4817E20011772F /* ProfileVC.xib in Resources */,
 				D2ED8AB61F45E99900E9760A /* LaunchScreen.storyboard in Resources */,
 				D2ED8AB31F45E99900E9760A /* Assets.xcassets in Resources */,
 				D2ED8AB11F45E99900E9760A /* Main.storyboard in Resources */,
@@ -284,6 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BC3A4D1F481F840011772F /* User.swift in Sources */,
+				D2BC3A491F4817E20011772F /* ProfileVC.swift in Sources */,
 				D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */,
 				D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */,
 				D2CE88731F46E24B000925A1 /* CreateAccountVC.swift in Sources */,

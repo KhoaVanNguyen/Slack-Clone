@@ -159,6 +159,14 @@ class AuthService{
         
         
     }
+    
+    func logout(){
+        isLoggedIn = false
+        token = ""
+        loggedInEmail = ""
+        UserDataService.instance.logout()
+        
+    }
 }
 
 

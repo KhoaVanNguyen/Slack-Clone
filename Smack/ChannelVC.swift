@@ -29,8 +29,7 @@ class ChannelVC: UIViewController {
     func updateUserData(_ notfi: Notification){
         let userData = UserDataService.instance
         
-        
-        
+    
         if AuthService.instance.isLoggedIn {
             loginButton.setTitle(userData.name, for: .normal)
             avatarImage.image = UIImage(named: userData.avatarName)
@@ -38,37 +37,24 @@ class ChannelVC: UIViewController {
         }else {
             loginButton.setTitle("Login", for: .normal)
             avatarImage.image = UIImage(named: "profileDefault")
-            avatarImage.backgroundColor = UIColor.green
+            avatarImage.backgroundColor = UIColor.clear
         }
         
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        let isLoggedIn = AuthService.instance.isLoggedIn
-//        if  isLoggedIn {
-//            let userData = UserDataService.instance
-//            
-//            if let img = userData.avatarName {
-//                avatarImage.image = UIImage(named: img)
-//                
-//            }
-//            
-//            if let name = userData.name {
-//                loginButton.setTitle(name, for: .normal)
-//            }
-//            
-//            //  avatarImage.backgroundColor = UIColor.red
-//            
-//            loginButton.isEnabled = false
-//            
-//        }
-    }
-
     
 
     @IBAction func login_touchUpInside(_ sender: Any) {
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        
+        if AuthService.instance.isLoggedIn {
+            let profileVC = ProfileVC()
+            profileVC.modalPresentationStyle = .custom
+            present(profileVC, animated: true, completion: nil)
+        }else {
+            performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
+        
+        
     }
 
 }
