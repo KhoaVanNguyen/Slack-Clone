@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 
 class CreateAccountVC: UIViewController {
+    
+    
+    var avatarName = "Khoa"
+    var avatarColor = "[0,1,0.5,1]"
     @IBOutlet weak var usernameTF: UITextField!
   
     @IBOutlet weak var passwordTF: UITextField!
@@ -26,10 +30,10 @@ class CreateAccountVC: UIViewController {
             return
         }
         
-//        guard let username = usernameTF.text else {
-//            showAlert(title: "Error", message: "Vui long nhap username")
-//            return
-//        }
+        guard let username = usernameTF.text else {
+            showAlert(title: "Error", message: "Vui long nhap username")
+            return
+        }
         
         guard let password = passwordTF.text else {
             showAlert(title: "Error", message: "Vui long nhap mat khau")
@@ -37,7 +41,14 @@ class CreateAccountVC: UIViewController {
         }
        
         AuthService.instance.createAccount(email: email, password: password) { (complete) in
-            print(complete)
+            AuthService.instance.login(email: email, password: password, completion: { (complete) in
+                AuthService.instance.createUserData(email: email, username: username, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (complete) in
+                    if complete {
+                        print("complete \(complete)")
+                        self.performSegue(withIdentifier: UNWIND, sender: nil)
+                    }
+                })
+            })
         }
       
         

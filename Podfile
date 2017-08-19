@@ -8,4 +8,5 @@ target 'Smack' do
   # Pods for Smack
   pod "Alamofire"
   pod 'Socket.IO-Client-Swift'
+  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end

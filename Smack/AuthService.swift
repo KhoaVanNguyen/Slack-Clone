@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 class AuthService{
     static let instance = AuthService()
     
@@ -72,21 +73,94 @@ class AuthService{
             if response.result.error != nil {
                 completion(false)
             }else {
-                if let data = response.result.value as? Dictionary<String,Any> {
-                    print(data)
-                    if let token = data["token"] as? String{
-                        self.token = token
-                    }
-                    if let email = data["user"] as? String{
-                        
-                        self.loggedInEmail = email
-                    }
+                //                if let data = response.result.value as? Dictionary<String,Any> {
+                //                    print(data)
+                //                    if let token = data["token"] as? String{
+                //                        self.token = token
+                //                    }
+                //                    if let email = data["user"] as? String{
+                //
+                //                        self.loggedInEmail = email
+                //                    }
+                //                }
+                
+                
+                
+                let jsonObj =  JSON([["name":"Jack", "age": 25]])
+                
+                //                print(jsonObj)
+                print(jsonObj["age"].stringValue)
+                guard let data = response.data else { return }
+                debugPrint(data)
+                do {
+                    let json = try JSON(data: data)
+                    
+                    self.loggedInEmail = json["email"].stringValue
+                    self.token = json["token"].stringValue
+                    
+                    
+                }catch{
+                    print("Error when using SwiftyJSON")
                 }
+                
+                
                 completion(true)
             }
         }
     }
     
+    
+    func createUserData(email: String,username: String, avatarName: String,avatarColor: String, completion: @escaping (Bool) -> Void){
+        
+        
+        let parameters = [
+            "name": username,
+            "email": email,
+            "avatarName": avatarName,
+            "avatarColor" : avatarColor
+        ]
+        let createUserHeader = [
+            "Content-Type": "application/json; charset=utf-8",
+            "Authorization": "Bearer \(self.token)"
+        ]
+        
+        Alamofire.request(ADDUSER_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: createUserHeader).response { (response) in
+            
+            if response.error != nil {
+                completion(false)
+            }else {
+                
+                guard let data = response.data else { return }
+                
+                do {
+                    let json = try JSON(data: data)
+                    
+                    
+                    let _id = json["_id"].stringValue
+                    let email = json["email"].stringValue
+                    let name = json["name"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let avatarColor = json["avatarColor"].stringValue
+                    
+                    
+                    UserDataService.instance.setUserData(id: _id, email: email, name: name, avatarName: avatarName, avatarColor: avatarColor)
+                    
+                    
+                }catch{
+                    debugPrint("Can't create user data")
+                }
+                
+                completion(true)
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
 }
 
 

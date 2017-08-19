@@ -1,15 +1,27 @@
 PODS:
   - Alamofire (4.0.1)
   - Socket.IO-Client-Swift (8.1.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - Socket.IO-Client-Swift
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: e9e53b8076e3cc8eabcb6ea53d70395b136dad5e
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Socket.IO-Client-Swift: 5c18fa2af9df8a19d20e4df815141103c1f7079b
+  SwiftyJSON: 05cf0e98a950e2ba343735264f5a96b81e755d00
 
-PODFILE CHECKSUM: 9a648171664b9ce11db09f6f2d2433a649d20450
+PODFILE CHECKSUM: 6cbfd9e6c6c791d05923ef3d12219acd0c4aaa2f
 
 COCOAPODS: 1.2.0.rc.1
