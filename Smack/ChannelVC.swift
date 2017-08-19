@@ -9,27 +9,35 @@
 import UIKit
 
 class ChannelVC: UIViewController {
-
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var avatarImage: UIImageView!
-   
+    
     @IBAction func prepareForUnWind(segue: UIStoryboardSegue){}
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification(_:)), name: NOTI_USERDATA_CHANGE, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateData()
+    }
+    
+    func handleNotification(_ notfi: Notification){
+        updateData()
         
-     
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUserData(_:)), name: NOTI_USERDATA_CHANGE, object: nil)
-        
-        
-       
         
     }
-    func updateUserData(_ notfi: Notification){
-        let userData = UserDataService.instance
-        
     
+    func updateData(){
+        let userData = UserDataService.instance
         if AuthService.instance.isLoggedIn {
             loginButton.setTitle(userData.name, for: .normal)
             avatarImage.image = UIImage(named: userData.avatarName)
@@ -39,11 +47,9 @@ class ChannelVC: UIViewController {
             avatarImage.image = UIImage(named: "profileDefault")
             avatarImage.backgroundColor = UIColor.clear
         }
-        
-        
+
     }
     
-
     @IBAction func login_touchUpInside(_ sender: Any) {
         
         if AuthService.instance.isLoggedIn {
@@ -56,5 +62,5 @@ class ChannelVC: UIViewController {
         
         
     }
-
+    
 }

@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smack/ChannelVC.swift"
-            timestampString = "524820066.503291"
+            timestampString = "524842016.903276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "updateUserData(_:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "handleNotification(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smack/AuthService.swift"
-            timestampString = "524820431.8719"
+            timestampString = "524841888.77496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "createUserData(email:username:avatarName:avatarColor:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -105,13 +105,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Smack/LoginVC.swift"
-            timestampString = "524821797.72616"
+            filePath = "Smack/AuthService.swift"
+            timestampString = "524841888.77496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "login_TouchUpInside(_:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "login(email:password:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

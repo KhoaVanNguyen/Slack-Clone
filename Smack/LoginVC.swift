@@ -34,12 +34,10 @@ class LoginVC: UIViewController {
         }
         
         AuthService.instance.login(email: email, password: password) { (result) in
-            
             if result {
                 User.instance.findUserByEmail(email: email, completion: { (isComplete, data) in
                     if isComplete {
-                        UserDataService.instance.setUserData(id: (data?[0])!, email: (data?[1])!, name: (data?[2])!, avatarName: (data?[3])!, avatarColor: (data?[4])!)
-                        
+                        AuthService.instance.updateUserData(data: data!)
                         NotificationCenter.default.post(name: NOTI_USERDATA_CHANGE, object: nil)
                         self.dismiss(animated: true, completion: nil)
                     }

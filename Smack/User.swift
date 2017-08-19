@@ -12,7 +12,7 @@ import SwiftyJSON
 class User {
     static var instance = User()
     
-    func findUserByEmail(email: String, completion: @escaping (Bool,[String]?) -> Void  ){
+    func findUserByEmail(email: String, completion: @escaping (Bool,Data?) -> Void  ){
         
         print(AuthService.instance.token)
         let header = [
@@ -27,25 +27,8 @@ class User {
                 print(response.result)
                 completion(false, nil)
             }else {
-                
                 guard let data = response.data else { return }
-                do {
-                    let json = try JSON(data: data)
-                    
-                    
-                    let _id = json["_id"].stringValue
-                    let email = json["email"].stringValue
-                    let name = json["name"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let avatarColor = json["avatarColor"].stringValue
-                    
-                    
-                    UserDataService.instance.setUserData(id: _id, email: email, name: name, avatarName: avatarName, avatarColor: avatarColor)
-                    
-                completion(true,[_id,email,name,avatarName,avatarColor])
-                }catch{
-                    debugPrint("Can't create user data")
-                }
+                completion(true,data)
 
             }
         }

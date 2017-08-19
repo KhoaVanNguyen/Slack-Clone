@@ -20,7 +20,22 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
-        print(self.revealViewController())
+        
+        if AuthService.instance.isLoggedIn {
+            print(true)
+            
+            let email = AuthService.instance.loggedInEmail
+            print("email \(email)")
+            User.instance.findUserByEmail(email: email, completion: { (complete, data) in
+                if complete {
+                    AuthService.instance.updateUserData(data: data!)
+                }
+            })
+            
+            NotificationCenter.default.post(name: NOTI_USERDATA_CHANGE, object: nil)
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -27,8 +27,13 @@ class AuthService{
     
     var loggedInEmail: String {
         
+        
+        
         get {
-            return defaults.value(forKey: LOGGIN_EMAIL) as! String
+            guard let email = defaults.value(forKey: LOGGIN_EMAIL)  else {
+                return ""
+            }
+            return email as! String
         }
         
         set {
@@ -93,10 +98,11 @@ class AuthService{
                     let json = try JSON(data: data)
                     
                     self.isLoggedIn = true
-                    self.loggedInEmail = json["email"].stringValue
+                    self.loggedInEmail = json["user"].stringValue
                     self.token = json["token"].stringValue
-                    print(self.token)
                     
+                    print(self.loggedInEmail)
+        
                 }catch{
                     print("Error when using SwiftyJSON")
                 }
@@ -130,36 +136,27 @@ class AuthService{
                 
                 guard let data = response.data else { return }
                 
-                do {
-                    let json = try JSON(data: data)
-                    
-                    
-                    let _id = json["_id"].stringValue
-                    let email = json["email"].stringValue
-                    let name = json["name"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let avatarColor = json["avatarColor"].stringValue
-                    
-                    
-                    UserDataService.instance.setUserData(id: _id, email: email, name: name, avatarName: avatarName, avatarColor: avatarColor)
-                    
-                    
-                }catch{
-                    debugPrint("Can't create user data")
-                }
-                
+                self.updateUserData(data: data)
                 completion(true)
             }
             
             
             
         }
-        
-        
-        
-        
     }
-    
+    func updateUserData(data: Data){
+        do {
+            let json = try JSON(data: data)
+            let _id = json["_id"].stringValue
+            let email = json["email"].stringValue
+            let name = json["name"].stringValue
+            let avatarName = json["avatarName"].stringValue
+            let avatarColor = json["avatarColor"].stringValue
+            UserDataService.instance.setUserData(id: _id, email: email, name: name, avatarName: avatarName, avatarColor: avatarColor)
+        }catch{
+            debugPrint("Can't create user data")
+        }
+    }
     func logout(){
         isLoggedIn = false
         token = ""
