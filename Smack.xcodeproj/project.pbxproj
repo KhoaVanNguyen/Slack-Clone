@@ -17,6 +17,8 @@
 		D269406F1F492F0B0042E2C1 /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D269406D1F492F0B0042E2C1 /* CreateChannelVC.xib */; };
 		D26940711F4936520042E2C1 /* ChannelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26940701F4936520042E2C1 /* ChannelService.swift */; };
 		D26940731F493AA80042E2C1 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26940721F493AA80042E2C1 /* ChannelCell.swift */; };
+		D26940751F4977080042E2C1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26940741F4977080042E2C1 /* MessageCell.swift */; };
+		D26940771F497EE80042E2C1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26940761F497EE80042E2C1 /* Message.swift */; };
 		D2BC3A461F47C4EC0011772F /* ChooseAvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */; };
 		D2BC3A491F4817E20011772F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC3A471F4817E20011772F /* ProfileVC.swift */; };
 		D2BC3A4A1F4817E20011772F /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BC3A481F4817E20011772F /* ProfileVC.xib */; };
@@ -43,6 +45,8 @@
 		D269406D1F492F0B0042E2C1 /* CreateChannelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		D26940701F4936520042E2C1 /* ChannelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelService.swift; sourceTree = "<group>"; };
 		D26940721F493AA80042E2C1 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		D26940741F4977080042E2C1 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		D26940761F497EE80042E2C1 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D2BC3A451F47C4EC0011772F /* ChooseAvatarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAvatarVC.swift; sourceTree = "<group>"; };
 		D2BC3A471F4817E20011772F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D2BC3A481F4817E20011772F /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				D20269301F46608400942AF5 /* GradientView.swift */,
 				D26940721F493AA80042E2C1 /* ChannelCell.swift */,
+				D26940741F4977080042E2C1 /* MessageCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				D25A2AC21F47381E00FC15C4 /* UserDataService.swift */,
 				D2BC3A4C1F481F840011772F /* User.swift */,
 				D26940701F4936520042E2C1 /* ChannelService.swift */,
+				D26940761F497EE80042E2C1 /* Message.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				D2BC3A4D1F481F840011772F /* User.swift in Sources */,
 				D2BC3A491F4817E20011772F /* ProfileVC.swift in Sources */,
 				D2D0FD211F45EB8D005FA25E /* ChannelVC.swift in Sources */,
+				D26940771F497EE80042E2C1 /* Message.swift in Sources */,
 				D2D0FD1F1F45EB83005FA25E /* ChatVC.swift in Sources */,
 				D2CE88731F46E24B000925A1 /* CreateAccountVC.swift in Sources */,
 				D26940731F493AA80042E2C1 /* ChannelCell.swift in Sources */,
@@ -328,6 +335,7 @@
 				D26940711F4936520042E2C1 /* ChannelService.swift in Sources */,
 				D2BC3A461F47C4EC0011772F /* ChooseAvatarVC.swift in Sources */,
 				D25A2AC31F47381E00FC15C4 /* UserDataService.swift in Sources */,
+				D26940751F4977080042E2C1 /* MessageCell.swift in Sources */,
 				D2ED8AAC1F45E99900E9760A /* AppDelegate.swift in Sources */,
 				D2ED8AC11F45E9B300E9760A /* SWRevealViewController.m in Sources */,
 				D20269341F46697400942AF5 /* Constants.swift in Sources */,

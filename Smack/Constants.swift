@@ -31,6 +31,8 @@ let LOGIN_URL = "\(BASE_URL)/account/login"
 let ADDUSER_URL = "\(BASE_URL)/user/add"
 let ADD_CHANNEL_URL = "\(BASE_URL)/channel/add"
 let FETCH_ALL_CHANNEL = "\(BASE_URL)/channel"
+let ADD_MESSAGE = "\(BASE_URL)/message/add"
+let FETCH_MESSAGE_URL = "\(BASE_URL)/message/byChannel/"
 
 // Notification
 

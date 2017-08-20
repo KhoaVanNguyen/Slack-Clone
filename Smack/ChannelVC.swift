@@ -21,17 +21,14 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
-        
-        
-        fetchChannels()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleNotification(_:)), name: NOTI_USERDATA_CHANGE, object: nil)
+
     }
-    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//    }
     func fetchChannels(){
         self.channels = []
         ChannelService.instance.fetchAllChannel { (data) in
@@ -52,7 +49,7 @@ class ChannelVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateData()
+//        updateData()
     }
     
     func handleNotification(_ notfi: Notification){
@@ -63,13 +60,19 @@ class ChannelVC: UIViewController {
     func updateData(){
         let userData = UserDataService.instance
         if AuthService.instance.isLoggedIn {
+            fetchChannels()
             loginButton.setTitle(userData.name, for: .normal)
             avatarImage.image = UIImage(named: userData.avatarName)
             avatarImage.backgroundColor = UserDataService.instance.convertColor()
+
         }else {
+            channels = []
+            tableView.reloadData()
             loginButton.setTitle("Login", for: .normal)
             avatarImage.image = UIImage(named: "profileDefault")
             avatarImage.backgroundColor = UIColor.clear
+            
+            
         }
 
     }
@@ -96,8 +99,6 @@ class ChannelVC: UIViewController {
         }else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
-        
     }
     
     func showAlert(title: String, message : String){
@@ -126,6 +127,18 @@ extension ChannelVC: UITableViewDataSource{
         let name = channels[indexPath.row]["name"].stringValue
         cell.configureCell(text: "#\(name)")
         return cell
+    }
+}
+extension ChannelVC: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let frontView = self.revealViewController().frontViewController as! ChatVC
+        frontView.channel = channels[indexPath.row]["name"].stringValue
+        frontView.channelId  = channels[indexPath.row]["_id"].stringValue
+        print(channels[indexPath.row]["_id"].stringValue)
+        frontView.fetchMessageInChannel()
+        self.revealViewController().revealToggle(nil)
+
     }
 }
 

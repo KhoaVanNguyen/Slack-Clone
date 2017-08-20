@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smack/ChannelVC.swift"
-            timestampString = "524906876.268009"
+            timestampString = "524913202.743784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "handleNotification(_:)"
             landmarkType = "7">
          </BreakpointContent>
