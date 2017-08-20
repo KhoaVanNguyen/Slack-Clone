@@ -29,7 +29,8 @@ let BASE_URL = "http://localhost:3005/v1"
 let REGISTER_URL = "\(BASE_URL)/account/register"
 let LOGIN_URL = "\(BASE_URL)/account/login"
 let ADDUSER_URL = "\(BASE_URL)/user/add"
-
+let ADD_CHANNEL_URL = "\(BASE_URL)/channel/add"
+let FETCH_ALL_CHANNEL = "\(BASE_URL)/channel"
 
 // Notification
 

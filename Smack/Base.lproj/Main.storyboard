@@ -63,14 +63,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6q-GW-9cw">
-                                <rect key="frame" x="215" y="48" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="POd-gb-CS7"/>
-                                    <constraint firstAttribute="height" constant="30" id="fI2-QQ-Jkd"/>
-                                </constraints>
-                                <state key="normal" image="addChannelButton"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-MG-gdN">
                                 <rect key="frame" x="15" y="395" width="65" height="65"/>
                                 <constraints>
@@ -88,19 +80,68 @@
                                     <action selector="login_touchUpInside:" destination="hkB-BH-reM" eventType="touchUpInside" id="AbJ-FA-gYS"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eds-MT-jCd">
+                                <rect key="frame" x="15" y="130" width="290" height="255"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChannelCell" id="jlD-4a-7TM" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="290" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jlD-4a-7TM" id="IyB-wr-AzV">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaC-kZ-HB6">
+                                                    <rect key="frame" x="10" y="12" width="270" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="aV1-z6-gcY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AaC-kZ-HB6" secondAttribute="trailing" constant="10" id="6KE-KG-Bo9"/>
+                                                <constraint firstItem="AaC-kZ-HB6" firstAttribute="centerY" secondItem="IyB-wr-AzV" secondAttribute="centerY" id="FT2-Bn-v0a"/>
+                                                <constraint firstItem="AaC-kZ-HB6" firstAttribute="leading" secondItem="IyB-wr-AzV" secondAttribute="leading" constant="10" id="aAc-EB-96W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelLabel" destination="AaC-kZ-HB6" id="hg7-V5-OK7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6q-GW-9cw">
+                                <rect key="frame" x="215" y="47" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="POd-gb-CS7"/>
+                                    <constraint firstAttribute="height" constant="30" id="fI2-QQ-Jkd"/>
+                                </constraints>
+                                <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="createChannel_TouchUpInside:" destination="hkB-BH-reM" eventType="touchUpInside" id="HBh-o9-NA6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vNK-Fa-w5H" firstAttribute="leading" secondItem="DvJ-MG-gdN" secondAttribute="trailing" constant="15" id="0y9-FM-z1N"/>
                             <constraint firstItem="vNK-Fa-w5H" firstAttribute="centerY" secondItem="DvJ-MG-gdN" secondAttribute="centerY" id="3j7-0D-MX0"/>
+                            <constraint firstItem="Eds-MT-jCd" firstAttribute="leading" secondItem="LjJ-Mj-bxz" secondAttribute="leading" constant="15" id="Ncn-2P-wKu"/>
                             <constraint firstItem="TEz-xu-PWd" firstAttribute="leading" secondItem="LjJ-Mj-bxz" secondAttribute="leading" constant="15" id="REn-5Z-nmJ"/>
                             <constraint firstItem="TEz-xu-PWd" firstAttribute="top" secondItem="pZM-8n-q86" secondAttribute="bottom" constant="25" id="bUc-sc-sWh"/>
                             <constraint firstItem="xML-B5-sSX" firstAttribute="top" secondItem="TEz-xu-PWd" secondAttribute="bottom" constant="15" id="c9K-gn-vW2"/>
                             <constraint firstItem="DvJ-MG-gdN" firstAttribute="leading" secondItem="LjJ-Mj-bxz" secondAttribute="leading" constant="15" id="cW1-e0-Vdt"/>
+                            <constraint firstItem="DvJ-MG-gdN" firstAttribute="top" secondItem="Eds-MT-jCd" secondAttribute="bottom" constant="10" id="hG6-7m-rbp"/>
                             <constraint firstItem="kJu-kU-FJ5" firstAttribute="top" secondItem="DvJ-MG-gdN" secondAttribute="bottom" constant="20" id="nHp-p2-yDe"/>
                             <constraint firstItem="G6q-GW-9cw" firstAttribute="centerY" secondItem="TEz-xu-PWd" secondAttribute="centerY" id="nYn-W6-NjT"/>
                             <constraint firstAttribute="trailing" secondItem="G6q-GW-9cw" secondAttribute="trailing" constant="75" id="rSm-iS-rDb"/>
                             <constraint firstItem="xML-B5-sSX" firstAttribute="leading" secondItem="LjJ-Mj-bxz" secondAttribute="leading" constant="15" id="wyk-Xd-Nok"/>
+                            <constraint firstItem="Eds-MT-jCd" firstAttribute="top" secondItem="xML-B5-sSX" secondAttribute="bottom" constant="10" id="xDq-8k-3WI"/>
+                            <constraint firstAttribute="trailing" secondItem="Eds-MT-jCd" secondAttribute="trailing" constant="15" id="z97-af-J2W"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
@@ -114,6 +155,7 @@
                     <connections>
                         <outlet property="avatarImage" destination="DvJ-MG-gdN" id="jtM-Uw-HIH"/>
                         <outlet property="loginButton" destination="vNK-Fa-w5H" id="78j-hx-do7"/>
+                        <outlet property="tableView" destination="Eds-MT-jCd" id="9BN-JA-TJg"/>
                         <segue destination="tBS-O1-HRp" kind="show" identifier="to_login" id="IK1-nT-T75"/>
                     </connections>
                 </viewController>
